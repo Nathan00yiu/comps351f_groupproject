@@ -1,0 +1,106 @@
+# Prompt
+
+---
+
+軟件標題是Library borrowing system
+
+1. 系統
+    1. 功能
+        1. 借書
+        2. 還書&還書逾期罰款
+        4. 查詢書本情況
+        5. 登入和註冊賬號
+    2. database
+        1. classes
+            1. Book table
+                1. name: str
+                2. author: str
+                3. publish year: int
+                4. intro: str
+                5. [FK]statusID(borrowed or not or damaged or lost or something else): int
+                6. [PK]bookID: str
+            2. User table
+                1. [PK]UserID: str
+                2. email: str
+                3. phone_number: str
+                4. username: str
+                5. password: str
+                6. bookBorrowLimit: int
+            3. Borrow table
+                1. [FK]UserID: str
+                2. [FK]BookID: str
+                3. [PK]BorrowID: str
+                4. datetime_borrowed: datetime
+                5. except_return_date: datetime
+                6. is_returned: bool
+                7. is_overdue: bool
+            4. Fine table
+                1. [PK]FineID: str
+                2. [FK]BorrowID: str
+                3. fine_amount: double
+                4. is_paid: bool
+                5. overdue_days: int
+            5. book status table
+                1. [PK]statusID: int
+                2. statusDetail: str
+2. interface
+    1. Regist page [Regist]
+        1. username: field + label
+        2. phone number: field + label
+        3. email: field + label
+        3. password: field + label
+        4. re-enter password: field + label
+        5. Regist: button => {[optional] checking process}=> {update user table} => [success](Login)
+        6. back: button => [Login]
+    2. Login page [Login]
+        1. username/email: field
+        2. password: field
+        3. Login: button => {Login} => [Dashboard]
+        4. Regist: button => [Regist]
+    3. Dashboard page [Dashboard]
+        1. how many book you currently borrowed/ total amount you can borrow: label
+        2. how many fine you currently have: label
+        3. List of book borrowed (with status like late submit or...): list region => {show rows of books with button} => [return]
+        4. Search For books: button => [seach]
+        5. Return books: button => [return]
+        6. Fine records: button => [fine]
+        7. logout: button => [success](Login)
+    4. Search page(查詢書本狀況) [Search]
+        1. Search label: label
+        2. Search label: field(book name or author)
+        3. Search: button => {get from book table} => {update result region}
+        4. result: list region => {show rows of books with button} => [book]
+        5. back: button => [Dashboard]
+    5. book detail page [book]
+        1. book name: label
+        2. status: label
+        3. book publish year: label
+        4. author: label
+        5. introduction: label
+        6. borrow: button => [borrow](BookID)
+        7. back: button => [Search]
+    6. borrow page [borrow]
+        1. BorrowID: label
+        2. book name: label
+        3. borrow date range: label
+        4. borrow datetime: label
+        5. return date: label
+        6. fine rules rermind: label
+        7. comfirm: button => {check user borrow limit if reached} => {record at borrow table} => [success](Dashboard)
+        8. cancel: button => [book]
+    7. return page [return]
+        1. BorrowID: field
+        2. comfirm: button => {record at borrow table} => {check if fine} => {[optional] update fine table} => [success](Dashboard)/[fine]
+        3. back: button => [Dashboard]
+    8. fine page [fine]
+        1. BorrowID: label
+        2. date suppost to return
+        3. final return date
+        4. pay: button => {update fine table} => [success](Dashboard)
+        5. back: button => [Dashboard]
+    9. success page [success](page)
+        1. text: label
+        2. Go to Dashboard: button => [page]
+
+
+

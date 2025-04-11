@@ -1,0 +1,2 @@
+conda activate ./conda_env
+python app\app.py

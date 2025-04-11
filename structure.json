@@ -1,0 +1,53 @@
+{
+    "app": {
+        "app.py": "File",
+        "controllers": {
+            "BookDetailPageController.py": "File",
+            "BorrowPageController.py": "File",
+            "DashboardPageController.py": "File",
+            "FineRecordsPageController.py": "File",
+            "LoginPageController.py": "File",
+            "RegisterPageController.py": "File",
+            "ResultPageController.py": "File",
+            "ReturnPageController.py": "File",
+            "SearchPageController.py": "File",
+            "SuccessPageController.py": "File",
+            "__init__.py": "File",
+            "__pycache__": "Skipped"
+        },
+        "main_window.py": "File",
+        "models": {
+            "database.py": "File",
+            "__pycache__": "Skipped"
+        },
+        "utils": {
+            "canvas_button.py": "File",
+            "page_controller.py": "File",
+            "page_view.py": "File",
+            "scrollable_frame.py": "File",
+            "__init__.py": "File",
+            "__pycache__": "Skipped"
+        },
+        "views": {
+            "BookDetailPageView.py": "File",
+            "BorrowPageView.py": "File",
+            "DashboardPageView.py": "File",
+            "FineRecordsPageView.py": "File",
+            "LoginPageView.py": "File",
+            "RegisterPageView.py": "File",
+            "ResultPageView.py": "File",
+            "ReturnPageView.py": "File",
+            "SearchPageView.py": "File",
+            "SuccessPageView.py": "File",
+            "__pycache__": "Skipped"
+        },
+        "__pycache__": "Skipped"
+    },
+    "create_structure.py": "File",
+    "init_database.py": "File",
+    "library.db": "File",
+    "main.py": "File",
+    "project_detail.txt": "File",
+    "range.txt": "File",
+    "run.txt": "File"
+}
